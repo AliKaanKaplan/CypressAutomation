@@ -4,8 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "cy:open": "cypress open",
-    "cy:run": "cypress run"
+    "cy:open:runner": "cypress open",
+    "cy:run": "cypress run",
+    "cy:run:reg":"cypress run -e TAGS='@regression' --headed --browser chrome",
+    "cy:run:feat:all.feature":"cypress run --spec cypress/integration/BDD-Features/**/ --headed --browser chrome",
+    "cy:run:feat:login.feature":"cypress run --spec cypress/integration/BDD-Features/Login.feature --headed --browser chrome",
+    "cy:run:feathedless:all.feature":"cypress run --spec cypress/integration/BDD-Features/**/ --headless --browser chrome",
+    "cy:run:feathedless:login.feature":"cypress run --spec cypress/integration/BDD-Features/Login.feature --headless --browser chrome"
+  
   },
   "keywords": ["Cypress","Docker","Cucumber","BDD"],
   "author": "Ali Kaan Kaplan",
