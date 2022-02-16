@@ -1,0 +1,21 @@
+{
+  "name": "trainingproject",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "cy:open": "cypress open",
+    "cy:run": "cypress run"
+  },
+  "keywords": ["Cypress","Docker","Cucumber","BDD"],
+  "author": "Ali Kaan Kaplan",
+  "license": "ISC",
+  "dependencies": {
+    "cypress": "^9.5.0",
+    "cypress-cucumber-preprocessor": "^4.3.1",
+    "prettier": "^2.5.1"
+  },
+  "cypress-cucumber-preprocessor": {
+    "step_definitions": "cypress/integration/Steps/**/"
+ }
+}
