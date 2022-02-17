@@ -1,7 +1,6 @@
 /// <reference types="Cypress" />
 
-import { should } from "chai"
-import { Given, When, Then, And } from "cypress-cucumber-preprocessor/steps"
+import { Given, When, Then} from "cypress-cucumber-preprocessor/steps"
 
 Given('I open home page', () => {
     cy.visit("https://www.linkedin.com")
@@ -20,4 +19,8 @@ Then('I should see login buttons', () => {
           ])
 
     })
+})
+
+Then('Get attr and verify',()=>{
+  cy.get('.nav__button-secondary').invoke('attr','data-tracking-control-name').should('have.text', 'guest_homepage-basic_nav-header-signin')
 })

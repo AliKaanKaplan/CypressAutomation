@@ -23,3 +23,32 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+Cypress.Commands.add("selectlistAndClick", (selector, productName) => {
+    cy.get(selector).each(($el, index, $list) => {
+        if ($el.text().includes(productName)) {
+            cy.get('button.btn.btn-info').eq(index).click()
+        }
+
+    })
+})
+
+Cypress.Commands.add("clicks", (selector) => {
+    cy.get(selector).click();
+})
+
+Cypress.Commands.add("forceClicks", (selector) => {
+    cy.get(selector).click({ force: true });
+})
+
+Cypress.Commands.add("clickContains", (selector, value) => {
+    cy.get(selector).contains(new String(value)).click();
+})
+
+Cypress.Commands.add("types", (selector, text) => {
+    cy.get(selector).type(text);
+})
+
+Cypress.Commands.add("getText", (selector, value) => {
+    return cy.get(selector).invoke(value).then(text => { return text; })
+})
