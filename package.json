@@ -6,11 +6,12 @@
   "scripts": {
     "cy:open:runner": "cypress open",
     "cy:run": "cypress run",
-    "cy:run:reg":"cypress run -e TAGS='@regression' --headed --browser chrome",
+    "cy:run:reg":"NO_COLOR=1 cypress run -e TAGS='@regression' --headed --browser chrome --record --key b8152c79-a5b2-45b6-956d-e0bd5a2612b7",
     "cy:run:feat:all.feature":"cypress run --spec cypress/integration/BDD-Features/**/ --headed --browser chrome",
     "cy:run:feat:login.feature":"cypress run --spec cypress/integration/BDD-Features/Login.feature --headed --browser chrome",
     "cy:run:feathedless:all.feature":"cypress run --spec cypress/integration/BDD-Features/**/ --headless --browser chrome",
-    "cy:run:feathedless:login.feature":"cypress run --spec cypress/integration/BDD-Features/Login.feature --headless --browser chrome"
+    "cy:run:feathedless:login.feature":"cypress run --spec cypress/integration/BDD-Features/Login.feature --headless --browser chrome",
+    "start:jenkins":"java -jar jenkins.war"
   },
   "keywords": ["Cypress","Docker","Cucumber","BDD"],
   "author": "Ali Kaan Kaplan",
@@ -22,5 +23,6 @@
   },
   "cypress-cucumber-preprocessor": {
     "step_definitions": "cypress/integration/Steps/**/"
- }
+ },
+ "projectId": "8tui3s"
 }
