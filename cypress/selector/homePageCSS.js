@@ -1,4 +1,4 @@
 export const selectorHomePage = {
-    signInButton: "#accountBtn",
+    signInButton: ".nav__button-secondary",
     loginnerButtons: ".nav__cta-container>a"
 };

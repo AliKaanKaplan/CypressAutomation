@@ -2,7 +2,7 @@
 
 import {Given, When, Then} from "cypress-cucumber-preprocessor/steps"
 import loginPage, {selectorLoginPage} from "../../pages/loginPage";
-import homePage, {selectorLoginPage} from "../../pages/homePage";
+import homePage, {selectorhomePage} from "../../pages/homePage";
 
 Given('I open login page',()=>{
    homePage.goToLoginPage()

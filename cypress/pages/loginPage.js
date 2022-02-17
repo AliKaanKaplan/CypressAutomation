@@ -1,6 +1,6 @@
 import {selectorLoginPage} from "../selector/loginPageCSS";
 
-class loginPage {
+class LoginPage {
 
    loginOnDirectly(){
       cy.types(selectorLoginPage.idInput,'aaaa');
@@ -20,4 +20,4 @@ class loginPage {
   }
 }
 
-export default new loginPage();
+export default new LoginPage();
