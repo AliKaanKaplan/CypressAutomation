@@ -52,3 +52,12 @@ Cypress.Commands.add("types", (selector, text) => {
 Cypress.Commands.add("getText", (selector, value) => {
     return cy.get(selector).invoke(value).then(text => { return text; })
 })
+
+Cypress.Commands.add("shouldVisible", (selector) => {
+    cy.get(selector).should('be.visible')  
+})
+
+Cypress.Commands.add("shouldNotVisible", (selector) => {
+    cy.get(selector).should('not.be.visible')  
+})
+ 

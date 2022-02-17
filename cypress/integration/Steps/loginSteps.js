@@ -1,25 +1,22 @@
 /// <reference types="Cypress" />
 
 import {Given, When, Then} from "cypress-cucumber-preprocessor/steps"
+import loginPage, {selectorLoginPage} from "../../pages/loginPage";
+import homePage, {selectorLoginPage} from "../../pages/homePage";
 
 Given('I open login page',()=>{
-    cy.visit('https://www.linkedin.com/')
-    cy.get("[class='nav__button-secondary']").click()
+   homePage.goToLoginPage()
 }) 
 
 When('I fill and submit login', () => {
-    cy.get('#username').type('aaaa')
-    cy.get('#password').type('aaaa')
-    cy.get('[type="submit"]').click()
+    loginPage.loginOnDirectly()
 })
 
 When('I fill with table and submit login', function (dataTable) {
-    cy.get('#username').type(dataTable.rawTable[1][0])
-    cy.get('#password').type(dataTable.rawTable[1][1])
-    cy.get('[type="submit"]').click()
+    loginPage.loginWithTable(dataTable.rawTable[1][0],dataTable.rawTable[1][1])
 })
 
 
 Then('I should see error', () => {
-cy.get('#error-for-username').should('be.visible')   
+loginPage.shouldSeeError() 
 })
