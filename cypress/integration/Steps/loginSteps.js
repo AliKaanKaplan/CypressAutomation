@@ -19,6 +19,7 @@ When('I fill with table and submit login', function (dataTable) {
     cy.get('[type="submit"]').click()
 })
 
+
 Then('I should see error', () => {
 cy.get('#error-for-username').should('be.visible')   
 })
